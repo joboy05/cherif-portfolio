@@ -88,7 +88,7 @@ export default function Footer() {
             <div className="space-y-3 text-[0.8rem] md:text-[0.85rem] font-medium text-white/45">
               <a href="tel:+2290196078613" className="hover:text-blue-600 transition-colors block text-white/35">+229 01 96 07 86 13</a>
               <a href="mailto:mr.riifols@gmail.com" className="hover:text-blue-600 transition-colors block lowercase text-white/35 break-words">mr.riifols@gmail.com</a>
-              <p className="text-white/35">Cotonou, <span className="text-blue-600">Bénin</span></p>
+              <p className="text-white/35">Benin Republic · <span className="text-blue-600">Remote & International</span></p>
             </div>
           </div>
 
@@ -98,7 +98,7 @@ export default function Footer() {
         <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 text-[0.7rem] md:text-[0.75rem] font-bold text-white/25 text-center md:text-left">
           <p>© {new Date().getFullYear()} CHERIF — TOUS DROITS RÉSERVÉS.</p>
           <p className="flex items-center gap-2 tracking-[0.05em]">
-            BENIN <span className="text-blue-600">229</span> · COTONOU
+            BENIN REPUBLIC <span className="text-blue-600">·</span> REMOTE & INTERNATIONAL
           </p>
         </div>
       </div>
