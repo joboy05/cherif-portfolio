@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  /* Premium Blue Editorial Palette (Default Light) */
+  --bg-color: #F8FAFC; /* Soft Blue-Grey Off-White */
+  --text-color: #0F172A;
+  --card-bg: #FFFFFF;
+  --border-color: rgba(15, 23, 42, 0.08);
+  --nav-bg: rgba(248, 250, 252, 0.85);
+  --selection-bg: #2563EB;
+  
+  --color-background: #F8FAFC; 
+  --color-foreground: #0F172A;
+  --color-primary: #2563EB; 
+  --color-secondary: #1E40AF; 
+  --color-accent: #F1F5F9; 
+  --color-brand-red: #8D5524; /* Marron/Camel Accent */
+  
+  --font-sans: var(--font-montserrat), sans-serif;
+  --font-display: var(--font-outfit), sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0a1120; /* Deeper Navy */
+  --text-color: #F8FAFC;
+  --card-bg: rgba(15, 23, 42, 0.6);
+  --border-color: rgba(37, 99, 235, 0.12);
+  --nav-bg: rgba(10, 17, 32, 0.85);
+  --color-accent: #0f172a;
+  --selection-bg: #2563EB;
+  
+  --color-background: #0a1120;
+  --color-foreground: #F8FAFC;
+  --color-primary: #3b82f6;
+}
+
+.ghost-border {
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.ghost-border:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    selection-background-color: var(--selection-bg);
+    selection-color: white;
+  }
+  body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+
+.input-premium {
+  @apply w-full bg-foreground/[0.02] border border-border-color rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-foreground font-medium placeholder:text-foreground/20;
+}
